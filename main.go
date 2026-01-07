@@ -20,6 +20,12 @@ func tokenizer(input string) []token {
 			current++
 			continue
 		}
+
+		if char == ")" {
+			tokens = append(tokens, token{kind: "paren", value: ")"})
+			current++
+			continue
+		}
 	}
 
 	return tokens
