@@ -1,6 +1,7 @@
 package main
 
 import "fmt"
+import "log"
 
 type token struct {
 	kind  string
@@ -81,5 +82,6 @@ func isLetter(char string) bool {
 
 func main() {
 	input := "(add 2 (subtract 10 5))"
-	fmt.Println(input)
+	tokens := tokenizer(input)
+	fmt.Printf("%#v\n", tokens)
 }
