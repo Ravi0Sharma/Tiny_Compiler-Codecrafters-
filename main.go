@@ -8,7 +8,17 @@ type token struct {
 }
 
 func tokenizer(input string) []token {
-	return []token{}
+	input += "\n" // sentinel
+	current := 0
+	tokens := []token{}
+
+	for current < len([]rune(input)) {
+		char := string([]rune(input)[current])
+		_ = char // temporary, until we use it
+		break
+	}
+
+	return tokens
 }
 
 func isNumber(char string) bool {
