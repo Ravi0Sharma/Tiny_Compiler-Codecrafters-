@@ -26,6 +26,11 @@ func tokenizer(input string) []token {
 			current++
 			continue
 		}
+
+		if char == " " || char == "\n" || char == "\t" || char == "\r" {
+			current++
+			continue
+		}
 	}
 
 	return tokens
