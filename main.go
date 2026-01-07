@@ -15,7 +15,11 @@ func tokenizer(input string) []token {
 	for current < len([]rune(input)) {
 		char := string([]rune(input)[current])
 		_ = char // temporary, until we use it
-		break
+		if char == "(" {
+			tokens = append(tokens, token{kind: "paren", value: "("})
+			current++
+			continue
+		}
 	}
 
 	return tokens
